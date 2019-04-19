@@ -21,54 +21,54 @@ namespace Demo
     Ogre::IndexBufferPacked* MeshBuilder::createIndexBuffer( Ogre::VaoManager *vaoManager,
                                                              void *indices,
                                                              int sizeI )
-	{
+    {
         Ogre::IndexBufferPacked *indexBuffer = 0;
-		try
-		{
+        try
+        {
             indexBuffer = vaoManager->createIndexBuffer( Ogre::IndexBufferPacked::IT_16BIT,
                                                          sizeI,
                                                          Ogre::BT_IMMUTABLE,
                                                          indices, false );
-		}
+        }
         catch( Ogre::Exception &e )
-		{
-			// When keepAsShadow = true, the memory will be freed when the index buffer is destroyed.
-			// However if for some weird reason there is an exception raised, the memory will
-			// not be freed, so it is up to us to do so.
-			// The reasons for exceptions are very rare. But we're doing this for correctness.
+        {
+            // When keepAsShadow = true, the memory will be freed when the index buffer is destroyed.
+            // However if for some weird reason there is an exception raised, the memory will
+            // not be freed, so it is up to us to do so.
+            // The reasons for exceptions are very rare. But we're doing this for correctness.
             OGRE_FREE_SIMD( indexBuffer, Ogre::MEMCATEGORY_GEOMETRY );
-			indexBuffer = nullptr;
-			throw e;
-		}
-		return indexBuffer;
-	}
+            indexBuffer = nullptr;
+            throw e;
+        }
+        return indexBuffer;
+    }
 
     Ogre::VertexBufferPacked* MeshBuilder::createVertexBuffer( Ogre::VaoManager *vaoManager,
                                                                void *vertices,
                                                                int sizeV )
-	{
+    {
         // Vertex declaration
-		Ogre::VertexElement2Vec vertexElements;
+        Ogre::VertexElement2Vec vertexElements;
         vertexElements.push_back( Ogre::VertexElement2( Ogre::VET_FLOAT3, Ogre::VES_POSITION ) );
         vertexElements.push_back( Ogre::VertexElement2( Ogre::VET_FLOAT3, Ogre::VES_NORMAL ) );
         vertexElements.push_back( Ogre::VertexElement2( Ogre::VET_FLOAT2, Ogre::VES_TEXTURE_COORDINATES ) );
 
         Ogre::VertexBufferPacked *vertexBuffer = 0;
-		try
-		{
-			//Create the actual vertex buffer.
+        try
+        {
+            //Create the actual vertex buffer.
             vertexBuffer = vaoManager->createVertexBuffer( vertexElements, sizeV,
                                                            Ogre::BT_DEFAULT,
                                                            vertices, false );
-		}
+        }
         catch( Ogre::Exception &e )
-		{
+        {
             OGRE_FREE_SIMD( vertexBuffer, Ogre::MEMCATEGORY_GEOMETRY );
-			vertexBuffer = nullptr;
-			throw e;
-		}
-		return vertexBuffer;
-	}
+            vertexBuffer = nullptr;
+            throw e;
+        }
+        return vertexBuffer;
+    }
 
 
     Ogre::MeshPtr MeshBuilder::buildGrassMesh( Ogre::VaoManager *vaoManager, GrassMesh *grassMesh )

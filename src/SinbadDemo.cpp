@@ -98,14 +98,14 @@ namespace Demo
             mResourcePath = "../Data/";
 
             //It's recommended that you set this path to:
-            //	%APPDATA%/SinbadDemo/ on Windows
-            //	~/.config/SinbadDemo/ on Linux
-            //	macCachePath() + "/SinbadDemo/" (NSCachesDirectory) on Apple -> Important because
-            //	on iOS your app could be rejected from App Store when they see iCloud
-            //	trying to backup your Ogre.log & ogre.cfg auto-generated without user
-            //	intervention. Also convenient because these settings will be deleted
-            //	if the user removes cached data from the app, so the settings will be
-            //	reset.
+            //  %APPDATA%/SinbadDemo/ on Windows
+            //  ~/.config/SinbadDemo/ on Linux
+            //  macCachePath() + "/SinbadDemo/" (NSCachesDirectory) on Apple -> Important because
+            //  on iOS your app could be rejected from App Store when they see iCloud
+            //  trying to backup your Ogre.log & ogre.cfg auto-generated without user
+            //  intervention. Also convenient because these settings will be deleted
+            //  if the user removes cached data from the app, so the settings will be
+            //  reset.
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
             mWriteAccessFolder =  + "/";
