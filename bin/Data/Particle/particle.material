@@ -1,0 +1,14 @@
+hlms Examples/Flare unlit
+{
+    scene_blend add
+    depth_write off
+    diffuse_map flare.png
+}
+
+hlms Examples/Droplet unlit
+{
+    //cull_mode none
+    scene_blend add
+    depth_write off
+    diffuse_map droplet.png
+}
