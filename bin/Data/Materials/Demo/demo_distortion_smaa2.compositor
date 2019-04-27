@@ -15,8 +15,8 @@ compositor_node DistortionSceneRenderingNode
     // sky
     pass render_quad
     {
-        quad_normals  camera_direction
-        material Demo/Sky
+      quad_normals  camera_direction
+      material Demo/Sky
     }
 
     pass render_scene
