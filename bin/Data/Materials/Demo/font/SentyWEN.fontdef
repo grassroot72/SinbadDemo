@@ -1,8 +1,8 @@
 SentyWEN
 {
-    type        truetype
-    source      SentyWEN2017.ttf
-    size        16
-    resolution  96
-    code_points 33-166 19968-40959
+  type        truetype
+  source      SentyWEN2017.ttf
+  size        16
+  resolution  96
+  code_points 33-166 19968-40959
 }
