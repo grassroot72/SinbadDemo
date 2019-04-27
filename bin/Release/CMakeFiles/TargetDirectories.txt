@@ -1,0 +1,3 @@
+/home/edward/myogre/SinbadDemo2/bin/Release/CMakeFiles/rebuild_cache.dir
+/home/edward/myogre/SinbadDemo2/bin/Release/CMakeFiles/SinbadDemo2.dir
+/home/edward/myogre/SinbadDemo2/bin/Release/CMakeFiles/edit_cache.dir

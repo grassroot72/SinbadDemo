@@ -1,0 +1,25 @@
+/*
+material Examples/OgreLogo
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.8 0.8 0.8
+
+			texture_unit
+			{
+				texture ogrelogo-small.png
+			}
+		}
+	}
+}
+*/
+
+hlms OgreLogo unlit
+{
+    //scene_blend alpha_blend
+    scene_blend add
+    depth_write off
+    diffuse_map ogrelogo-small.png
+}

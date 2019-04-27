@@ -1,0 +1,35 @@
+hlms Examples/Flare unlit
+{
+    scene_blend add
+    depth_write off
+    diffuse_map flare-bptc.png
+}
+
+hlms Examples/Flare2 unlit
+{
+    scene_blend add
+    depth_write off
+    diffuse_map flaretrail-bptc.png
+}
+
+hlms Examples/Aureola unlit
+{
+    scene_blend alpha_blend
+    depth_write off
+    diffuse_map aureola-bptc.png
+}
+
+hlms Examples/Droplet unlit
+{
+    //cull_mode none
+    scene_blend add
+    depth_write off
+    diffuse_map droplet-bptc.png
+}
+
+hlms Examples/Smoke unlit
+{
+    scene_blend alpha_blend
+	depth_write off
+	diffuse_map smoke-bptc.png
+}
