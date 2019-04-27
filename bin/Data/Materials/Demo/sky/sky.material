@@ -2,16 +2,16 @@ import SkyPostprocess from SkyPostprocess.material
 
 material Demo/Sky : SkyPostprocess
 {
-	technique
-	{
-		pass
-		{
-			texture_unit
-			{
-				//Dummy command to set the gamma correction
-				texture early_morning.jpg gamma
-				cubic_texture early_morning.jpg combinedUVW
-			}
-		}
-	}
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        //Dummy command to set the gamma correction
+        texture early_morning.jpg gamma
+        cubic_texture early_morning.jpg combinedUVW
+      }
+    }
+  }
 }
