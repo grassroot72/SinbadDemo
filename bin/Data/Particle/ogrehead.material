@@ -1,39 +1,39 @@
 hlms Ogre/Earring pbs
 {
-    roughness   0.2
-    metalness   0.3
-	
-    diffuse_map     earring-bptc.png
-    specular_map    earring-bptc.png
-    roughness_map   earring-bptc.png
+  roughness   0.2
+  metalness   0.3
+
+  diffuse_map     earring-bptc.png
+  specular_map    earring-bptc.png
+  roughness_map   earring-bptc.png
 }
 
 hlms Ogre/Skin pbs
 {
-    roughness   0.8
-    fresnel     1.0
-	
-    diffuse_map     GreenSkin-bptc.png
-    specular_map    GreenSkin-bptc.png
-    roughness_map   GreenSkin-bptc.png
+  roughness   0.8
+  fresnel     1.0
+
+  diffuse_map     GreenSkin-bptc.png
+  specular_map    GreenSkin-bptc.png
+  roughness_map   GreenSkin-bptc.png
 }
 
 hlms Ogre/Tusks pbs
 {
-    roughness   0.9
-    fresnel     1.33
-	
-    diffuse_map     tusk-bptc.png
-    specular_map    tusk-bptc.png
-    roughness_map   tusk-bptc.png
+  roughness   0.9
+  fresnel     1.33
+
+  diffuse_map     tusk-bptc.png
+  specular_map    tusk-bptc.png
+  roughness_map   tusk-bptc.png
 }
 
 hlms Ogre/Eyes pbs
 {
-    diffuse		1.0 1.0 1.0
-	specular	1.0 1.0 1.0
-	emissive    0.3 0.1 0.05
-	
-	roughness   0.2
-    fresnel     0.5
+  diffuse   1.0 1.0 1.0
+  specular  1.0 1.0 1.0
+  emissive    0.3 0.1 0.05
+
+  roughness   0.2
+  fresnel     0.5
 }

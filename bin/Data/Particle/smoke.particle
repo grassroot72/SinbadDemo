@@ -28,17 +28,17 @@ particle_system Examples/Smoke
 		image smokecolors.png
 	}
 
-   	affector Rotator
-   	{
-		rotation_range_start 0
-		rotation_range_end 360
-		rotation_speed_range_start -80
-		rotation_speed_range_end 80
-   	}
+	affector Rotator
+	{
+    rotation_range_start 0
+    rotation_range_end 360
+    rotation_speed_range_start -80
+    rotation_speed_range_end 80
+	}
 
-   	affector Scaler
-   	{
-       	rate 4
-   	}
+	affector Scaler
+	{
+		rate 4
+	}
 
 }
