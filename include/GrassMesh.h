@@ -10,31 +10,31 @@
 
 namespace Demo
 {
-	struct GrassVertex
-	{
-		float px, py, pz;   // Position
-		float nx, ny, nz;   // Normals
-		float u,  v;        // Texture
+  struct GrassVertex
+  {
+    float px, py, pz;   // Position
+    float nx, ny, nz;   // Normals
+    float u,  v;        // Texture
 
-		GrassVertex() {}
-		GrassVertex( float _px, float _py, float _pz,
-								 float _nx, float _ny, float _nz,
-								 float _u,  float _v ) :
-			px(_px), py(_py), pz(_pz),
-			nx(_nx), ny(_ny), nz(_nz),
-			u(_u),   v(_v)
-		{
-		}
-	};
+    GrassVertex() {}
+    GrassVertex( float _px, float _py, float _pz,
+                 float _nx, float _ny, float _nz,
+                 float _u,  float _v ) :
+      px(_px), py(_py), pz(_pz),
+      nx(_nx), ny(_ny), nz(_nz),
+      u(_u),   v(_v)
+    {
+    }
+  };
 
-	class GrassMesh
-	{
-		Ogre::Real mRotationTime;
+  class GrassMesh
+  {
+    Ogre::Real mRotationTime;
 
-		void fillVertices( GrassVertex *vertices );
-		void fillIndices( Ogre::uint16 *indices );
+    void fillVertices( GrassVertex *vertices );
+    void fillIndices( Ogre::uint16 *indices );
 
-	public:
+  public:
     GrassVertex *mVertices;
     int mVertexCount;
 
@@ -45,7 +45,7 @@ namespace Demo
     ~GrassMesh();
 
     void update( Ogre::MeshPtr grassMesh, Ogre::Real deltaTime );
-	};
+  };
 }
 
 #endif
