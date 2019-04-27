@@ -1,105 +1,105 @@
 compositor_node SinbadDemoRenderingNode
 {
-	in 0 rt_renderwindow
+  in 0 rt_renderwindow
 
-	target rt_renderwindow
-	{
-		
-		pass clear
-		{
-			colour_value 0.2 0.4 0.6 1
-		}
-		
-		pass render_scene
-		{
-		    shadows     SinbadDemoShadowNode
-		    overlays    on
-		}
-	}
+  target rt_renderwindow
+  {
+
+    pass clear
+    {
+      colour_value 0.2 0.4 0.6 1
+    }
+
+    pass render_scene
+    {
+        shadows     SinbadDemoShadowNode
+        overlays    on
+    }
+  }
 }
 
 abstract target cubemap_target_shadow
 {
-	pass clear { colour_value 1 1 1 1 }
-		
-	pass render_scene
-	{
-		camera_cubemap_reorient true
-	}
+  pass clear { colour_value 1 1 1 1 }
+
+  pass render_scene
+  {
+    camera_cubemap_reorient true
+  }
 }
 
 compositor_node_shadow SinbadDemoShadowNode
 {
-    //texture atlas 2048 11264 PF_D32_FLOAT no_fsaa
-    texture atlas 1536 8448 PF_D32_FLOAT no_fsaa
-    //texture atlas 1024 5632 PF_D32_FLOAT no_fsaa
-    texture tmpCubemap 1024 1024 PF_FLOAT32_R cubemap no_fsaa
+  //texture atlas 2048 11264 PF_D32_FLOAT no_fsaa
+  texture atlas 1536 8448 PF_D32_FLOAT no_fsaa
+  //texture atlas 1024 5632 PF_D32_FLOAT no_fsaa
+  texture tmpCubemap 1024 1024 PF_FLOAT32_R cubemap no_fsaa
 
-    technique pssm
-    num_splits      3
-    pssm_lambda     0.95
-	shadow_map 0 atlas uv 0.0 0.000000000000000 1.0 0.181818181818182 light 0 split 0
-	shadow_map 1 atlas uv 0.0 0.181818181818182 0.5 0.090909090909091 light 0 split 1
-	shadow_map 2 atlas uv 0.5 0.181818181818182 0.5 0.090909090909091 light 0 split 2
+  technique pssm
+  num_splits      3
+  pssm_lambda     0.95
+  shadow_map 0 atlas uv 0.0 0.000000000000000 1.0 0.181818181818182 light 0 split 0
+  shadow_map 1 atlas uv 0.0 0.181818181818182 0.5 0.090909090909091 light 0 split 1
+  shadow_map 2 atlas uv 0.5 0.181818181818182 0.5 0.090909090909091 light 0 split 2
 
-	technique focused
-	shadow_map 3 atlas uv 0.0 0.272727272727273 1.0 0.181818181818182 light 1
-	shadow_map 4 atlas uv 0.0 0.454545454545455 1.0 0.181818181818182 light 2
-	shadow_map 5 atlas uv 0.0 0.636363636363636 1.0 0.181818181818182 light 3
-	shadow_map 6 atlas uv 0.0 0.818181818181818 1.0 0.181818181818182 light 4
+  technique focused
+  shadow_map 3 atlas uv 0.0 0.272727272727273 1.0 0.181818181818182 light 1
+  shadow_map 4 atlas uv 0.0 0.454545454545455 1.0 0.181818181818182 light 2
+  shadow_map 5 atlas uv 0.0 0.636363636363636 1.0 0.181818181818182 light 3
+  shadow_map 6 atlas uv 0.0 0.818181818181818 1.0 0.181818181818182 light 4
 
-    target atlas
+  target atlas
+  {
+    pass clear
     {
-        pass clear
-        {
-            colour_value 1 1 1 1
-        }
+      colour_value 1 1 1 1
     }
+  }
 
-    shadow_map_target_type directional
+  shadow_map_target_type directional
+  {
+    shadow_map 0 1 2
     {
-        shadow_map 0 1 2
-        {
-            pass render_scene
-            {
-            }
-        }
+      pass render_scene
+      {
+      }
     }
+  }
 
-    shadow_map_target_type spot
+  shadow_map_target_type spot
+  {
+    shadow_map 3 4 5 6
     {
-        shadow_map 3 4 5 6
-        {
-            pass render_scene
-            {
-            }
-        }
+      pass render_scene
+      {
+      }
     }
+  }
 
-    shadow_map_target_type point
+  shadow_map_target_type point
+  {
+    shadow_map_repeat 3 4 5 6
     {
-        shadow_map_repeat 3 4 5 6
-        {
-            target tmpCubemap +X : cubemap_target_shadow {}
-            target tmpCubemap -X : cubemap_target_shadow {}
-            target tmpCubemap +Y : cubemap_target_shadow {}
-            target tmpCubemap -Y : cubemap_target_shadow {}
-            target tmpCubemap +Z : cubemap_target_shadow {}
-            target tmpCubemap -Z : cubemap_target_shadow {}
+      target tmpCubemap +X : cubemap_target_shadow {}
+      target tmpCubemap -X : cubemap_target_shadow {}
+      target tmpCubemap +Y : cubemap_target_shadow {}
+      target tmpCubemap -Y : cubemap_target_shadow {}
+      target tmpCubemap +Z : cubemap_target_shadow {}
+      target tmpCubemap -Z : cubemap_target_shadow {}
 
-            shadow_map
-            {
-                pass render_quad
-                {
-                    material Ogre/DPSM/CubeToDpsm
-                    input 0 tmpCubemap
-                }
-            }
+      shadow_map
+      {
+        pass render_quad
+        {
+          material Ogre/DPSM/CubeToDpsm
+          input 0 tmpCubemap
         }
+      }
     }
+  }
 }
 
 workspace SinbadDemoWorkspace
 {
-    connect_output SinbadDemoRenderingNode 0
+  connect_output SinbadDemoRenderingNode 0
 }

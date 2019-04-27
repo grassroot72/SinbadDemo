@@ -1,192 +1,192 @@
 /*
 hlms demo_floor pbs
 {
-    roughness   0.9
-    fresnel     1.33
-	
-    diffuse_map     floor_diffuse-bptc.png
-    normal_map      floor_normal.png
-    specular_map    floor_diffuse-bptc.png
-    roughness_map   floor_ao.png
+  roughness   0.9
+  fresnel     1.33
+
+  diffuse_map     floor_diffuse-bptc.png
+  normal_map      floor_normal.png
+  specular_map    floor_diffuse-bptc.png
+  roughness_map   floor_ao.png
 }
 */
 hlms demo_floor pbs
 {
-    roughness   0.9
-    fresnel     1.33
-	
-    diffuse_map     cobbles01-bptc.png
-    normal_map      cobbles01-normal-bptc.png
-    specular_map    cobbles01-bptc.png
-    roughness_map   cobbles01_ao.png
+  roughness   0.9
+  fresnel     1.33
+
+  diffuse_map     cobbles01-bptc.png
+  normal_map      cobbles01-normal-bptc.png
+  specular_map    cobbles01-bptc.png
+  roughness_map   cobbles01_ao.png
 }
 
 
 hlms demo_wall pbs
 {
-    roughness   0.9
-    fresnel     1.33
-	
-    diffuse_map     bricks-bptc.png
-    normal_map      bricks_normal-bptc.png
-    specular_map    bricks-bptc.png
-    roughness_map   bricks-bptc.png
+  roughness   0.9
+  fresnel     1.33
+
+  diffuse_map     bricks-bptc.png
+  normal_map      bricks_normal-bptc.png
+  specular_map    bricks-bptc.png
+  roughness_map   bricks-bptc.png
 }
 
 
 hlms RustyBarrel pbs
 {
-    roughness   1.0
-    fresnel     1.33
-    
-    diffuse_map     RustyBarrel-bptc.png
-    normal_map      RustyBarrel-normal-bptc.png
-    specular_map    RustyBarrel-bptc.png
-    roughness_map   RustyBarrel-bptc.png
+  roughness   1.0
+  fresnel     1.33
+
+  diffuse_map     RustyBarrel-bptc.png
+  normal_map      RustyBarrel-normal-bptc.png
+  specular_map    RustyBarrel-bptc.png
+  roughness_map   RustyBarrel-bptc.png
 }
 
 // ninja player
 hlms Player/TEXFACE/Player.png pbs
 {
-    roughness   1.0
-    fresnel     1.33
-    
-    diffuse_map     RustySteel-bptc.png
-    normal_map      RustySteel-normal-bptc.png
-    specular_map    RustySteel-bptc.png
-    roughness_map   RustySteel-bptc.png
+  roughness   1.0
+  fresnel     1.33
+
+  diffuse_map     RustySteel-bptc.png
+  normal_map      RustySteel-normal-bptc.png
+  specular_map    RustySteel-bptc.png
+  roughness_map   RustySteel-bptc.png
 }
 
 hlms grass pbs
 {
-    //cull_mode none
-    //scene_blend alpha_blend
-    //depth_write off
-    //depth_check on
+  //cull_mode none
+  //scene_blend alpha_blend
+  //depth_write off
+  //depth_check on
 
-    roughness   0.9
-    fresnel     1.33
-    
-    diffuse_map     grass-bptc.png
-    specular_map    grass-bptc.png
-    roughness_map   grass_ao.png
+  roughness   0.9
+  fresnel     1.33
+
+  diffuse_map     grass-bptc.png
+  specular_map    grass-bptc.png
+  roughness_map   grass_ao.png
 }
 
 // Sinbad
 hlms Sinbad/Body pbs
 {
-    roughness   0.8
-    fresnel     1.0
-	
-    diffuse_map     sinbad_body.png
-    specular_map    sinbad_body.png
-    roughness_map   sinbad_body.png
-    
+  roughness   0.8
+  fresnel     1.0
+
+  diffuse_map     sinbad_body.png
+  specular_map    sinbad_body.png
+  roughness_map   sinbad_body.png
+
 }
 
 hlms Sinbad/Gold pbs
 {
-    roughness   0.2
-    //metalness   0.5
-    //fresnel   1.33
-	
-    diffuse_map     sinbad_clothes.png
-    specular_map    sinbad_clothes.png
-    roughness_map   sinbad_clothes.png
+  roughness   0.2
+  //metalness   0.5
+  //fresnel   1.33
+
+  diffuse_map     sinbad_clothes.png
+  specular_map    sinbad_clothes.png
+  roughness_map   sinbad_clothes.png
 }
 
 hlms Sinbad/Sheaths pbs
 {
-    roughness   0.8
-    //fresnel   1.33
-	
-    diffuse_map     sinbad_sword.png
-    specular_map    sinbad_sword.png
-    roughness_map   sinbad_sword.png
+  roughness   0.8
+  //fresnel   1.33
+
+  diffuse_map     sinbad_sword.png
+  specular_map    sinbad_sword.png
+  roughness_map   sinbad_sword.png
 }
 
 hlms Sinbad/Clothes pbs
 {
-    roughness   0.9
-    //fresnel   1.33
-	
-    diffuse_map     sinbad_clothes.png
-    specular_map    sinbad_clothes.png
-    roughness_map   sinbad_clothes.png
+  roughness   0.9
+  //fresnel   1.33
+
+  diffuse_map     sinbad_clothes.png
+  specular_map    sinbad_clothes.png
+  roughness_map   sinbad_clothes.png
 }
 
 hlms Sinbad/Teeth pbs
 {
-    roughness   0.9
-    fresnel     1.33
-	
-    diffuse_map     sinbad_body.png
-    specular_map    sinbad_body.png
-    roughness_map   sinbad_body.png
+  roughness   0.9
+  fresnel     1.33
+
+  diffuse_map     sinbad_body.png
+  specular_map    sinbad_body.png
+  roughness_map   sinbad_body.png
 }
 
 hlms Sinbad/Eyes pbs
 {
-    roughness   0.2
-    fresnel     1.0
-	
-    diffuse_map     sinbad_body.png
-    specular_map    sinbad_body.png
-    roughness_map   sinbad_body.png
+  roughness   0.2
+  fresnel     1.0
+
+  diffuse_map     sinbad_body.png
+  specular_map    sinbad_body.png
+  roughness_map   sinbad_body.png
 }
 
 hlms Sinbad/Spikes pbs
 {
-    roughness   0.2
-    metalness   0.3
-    //fresnel     1.33
-	
-    diffuse_map     sinbad_clothes.png
-    //specular_map    sinbad_clothes.png
-    metalness_map    sinbad_clothes.png
-    roughness_map   sinbad_clothes.png
+  roughness   0.2
+  metalness   0.3
+  //fresnel     1.33
+
+  diffuse_map     sinbad_clothes.png
+  //specular_map    sinbad_clothes.png
+  metalness_map    sinbad_clothes.png
+  roughness_map   sinbad_clothes.png
 }
 
 hlms Sinbad/Blade pbs
 {
-    roughness   0.2
-    metalness   0.3
-    //fresnel     0.2
-	
-    diffuse_map     sinbad_sword.png
-    //specular_map    sinbad_sword.png
-    metalness_map    sinbad_sword.png
-    roughness_map   sinbad_sword.png
+  roughness   0.2
+  metalness   0.3
+  //fresnel     0.2
+
+  diffuse_map     sinbad_sword.png
+  //specular_map    sinbad_sword.png
+  metalness_map    sinbad_sword.png
+  roughness_map   sinbad_sword.png
 }
 
 hlms Sinbad/Ruby pbs
 {
-    roughness   0.1
-    fresnel     0.1
-    emissive    0.2 0.0 0.0
-	
-    diffuse_map     sinbad_sword.png
-    specular_map    sinbad_sword.png
-    roughness_map   sinbad_sword.png
+  roughness   0.1
+  fresnel     0.1
+  emissive    0.2 0.0 0.0
+
+  diffuse_map     sinbad_sword.png
+  specular_map    sinbad_sword.png
+  roughness_map   sinbad_sword.png
 }
 
 hlms Sinbad/Hilt pbs
 {
-    roughness   0.3
-    //fresnel   1.33
-	
-    diffuse_map     sinbad_sword.png
-    specular_map    sinbad_sword.png
-    roughness_map   sinbad_sword.png
+  roughness   0.3
+  //fresnel   1.33
+
+  diffuse_map     sinbad_sword.png
+  specular_map    sinbad_sword.png
+  roughness_map   sinbad_sword.png
 }
 
 hlms Sinbad/Handle pbs
 {
-    roughness   0.3
-    metalness   0.5
-    //fresnel   1.33
-	
-    diffuse_map     sinbad_sword.png
-    specular_map    sinbad_sword.png
-    roughness_map   sinbad_sword.png
+  roughness   0.3
+  metalness   0.5
+  //fresnel   1.33
+
+  diffuse_map     sinbad_sword.png
+  specular_map    sinbad_sword.png
+  roughness_map   sinbad_sword.png
 }
