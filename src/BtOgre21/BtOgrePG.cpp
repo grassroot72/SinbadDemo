@@ -3,48 +3,48 @@
 
 namespace BtOgre
 {
-    RigidBodyState::RigidBodyState( Ogre::SceneNode* node, const btTransform& transform, const btTransform& offset ) :
-        mTransform( transform ),
-        mCenterOfMassOffset( offset ),
-        mNode( node )
-    {
-    }
+  RigidBodyState::RigidBodyState( Ogre::SceneNode* node, const btTransform& transform, const btTransform& offset ) :
+    mTransform( transform ),
+    mCenterOfMassOffset( offset ),
+    mNode( node )
+  {
+  }
 
-    RigidBodyState::RigidBodyState( Ogre::SceneNode* node ) :
-        mTransform
-        (
-            node ? Convert::toBullet( node->getOrientation() ) : btQuaternion( 0, 0, 0, 1 ),
-            node ? Convert::toBullet( node->getPosition() ) : btVector3( 0, 0, 0 )
-        ),
-        mCenterOfMassOffset( btTransform::getIdentity() ),
-        mNode( node )
-    {
-    }
+  RigidBodyState::RigidBodyState( Ogre::SceneNode* node ) :
+    mTransform
+    (
+      node ? Convert::toBullet( node->getOrientation() ) : btQuaternion( 0, 0, 0, 1 ),
+      node ? Convert::toBullet( node->getPosition() ) : btVector3( 0, 0, 0 )
+    ),
+    mCenterOfMassOffset( btTransform::getIdentity() ),
+    mNode( node )
+  {
+  }
 
-    void RigidBodyState::getWorldTransform( btTransform& ret ) const
-    {
-        ret = mTransform;
-    }
+  void RigidBodyState::getWorldTransform( btTransform& ret ) const
+  {
+    ret = mTransform;
+  }
 
-    void RigidBodyState::setWorldTransform( const btTransform& in )
-    {
-        if( !mNode ) return;
+  void RigidBodyState::setWorldTransform( const btTransform& in )
+  {
+    if( !mNode ) return;
 
-        //store transform
-        mTransform = in;
+    //store transform
+    mTransform = in;
 
-        //extract position and orientation
-        const auto transform = mTransform * mCenterOfMassOffset;
-        const auto rot = transform.getRotation();
-        const auto pos = transform.getOrigin();
+    //extract position and orientation
+    const auto transform = mTransform * mCenterOfMassOffset;
+    const auto rot = transform.getRotation();
+    const auto pos = transform.getOrigin();
 
-        //Set to the node
-        mNode->_setDerivedOrientation( { rot.w(), rot.x(), rot.y(), rot.z() } );
-        mNode->_setDerivedPosition( { pos.x(), pos.y(), pos.z() } );
-    }
+    //Set to the node
+    mNode->_setDerivedOrientation( { rot.w(), rot.x(), rot.y(), rot.z() } );
+    mNode->_setDerivedPosition( { pos.x(), pos.y(), pos.z() } );
+  }
 
-    void RigidBodyState::setNode( Ogre::SceneNode* node )
-    {
-        mNode = node;
-    }
+  void RigidBodyState::setNode( Ogre::SceneNode* node )
+  {
+    mNode = node;
+  }
 }
