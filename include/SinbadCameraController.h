@@ -13,49 +13,49 @@
 
 namespace Demo
 {
-    class SinbadCharacterController;
+  class SinbadCharacterController;
 
-    class SinbadCameraController
-    {
-        int mCameraMode;
+  class SinbadCameraController
+  {
+    int mCameraMode;
 
-        bool mSpeedMofifier;
-        bool mWASD[4];
-        bool mSlideUpDown[2];
-        float mCameraYaw;
-        float mCameraPitch;
-        public: float mCameraBaseSpeed;
-        public: float mCameraSpeedBoost;
-
-
-        Ogre::SceneNode *mCameraPivotNode;
-        Ogre::SceneNode *mCameraGoalNode;
-        Ogre::SceneNode *mCameraNode;
-        Ogre::Real mPivotPitch;
+    bool mSpeedMofifier;
+    bool mWASD[4];
+    bool mSlideUpDown[2];
+    float mCameraYaw;
+    float mCameraPitch;
+    public: float mCameraBaseSpeed;
+    public: float mCameraSpeedBoost;
 
 
-        SinbadCharacterController *mCharacterController;    // 3rd person camera character
+    Ogre::SceneNode *mCameraPivotNode;
+    Ogre::SceneNode *mCameraGoalNode;
+    Ogre::SceneNode *mCameraNode;
+    Ogre::Real mPivotPitch;
 
-        void updateCameraGoal( Ogre::Real deltaYaw, Ogre::Real deltaPitch, Ogre::Real deltaZoom );
 
-    private:
-        GraphicsSystem *mGraphicsSystem;
+    SinbadCharacterController *mCharacterController;    // 3rd person camera character
 
-    public:
-        SinbadCameraController( GraphicsSystem *graphicsSystem );
+    void updateCameraGoal( Ogre::Real deltaYaw, Ogre::Real deltaPitch, Ogre::Real deltaZoom );
 
-        void update( Ogre::Real deltaTime );
+  private:
+    GraphicsSystem *mGraphicsSystem;
 
-        bool keyPressed( const SDL_KeyboardEvent &evt );
-        bool keyReleased( const SDL_KeyboardEvent &evt );
+  public:
+    SinbadCameraController( GraphicsSystem *graphicsSystem );
 
-        void mouseMoved( const SDL_Event &evt );
+    void update( Ogre::Real deltaTime );
 
-        int getCameraMode();
-        void setCameraMode( int mode );
+    bool keyPressed( const SDL_KeyboardEvent &evt );
+    bool keyReleased( const SDL_KeyboardEvent &evt );
 
-        void hookCharacterController( SinbadCharacterController *characterController );
-    };
+    void mouseMoved( const SDL_Event &evt );
+
+    int getCameraMode();
+    void setCameraMode( int mode );
+
+    void hookCharacterController( SinbadCharacterController *characterController );
+  };
 }
 
 

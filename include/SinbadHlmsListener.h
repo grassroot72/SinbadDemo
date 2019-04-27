@@ -7,22 +7,22 @@
 
 namespace Ogre
 {
-    class CompositorShadowNode;
+  class CompositorShadowNode;
 }
 
 namespace Demo
 {
-    class SinbadHlmsListener : public Ogre::HlmsListener
-    {
-    public:
-        //Comunicate stuffs to the PBS shader
-        Ogre::uint32 getPassBufferSize( const Ogre::CompositorShadowNode *shadowNode, bool casterPass,
-                                        bool dualParaboloid, Ogre::SceneManager *sceneManager ) const;
+  class SinbadHlmsListener : public Ogre::HlmsListener
+  {
+  public:
+    //Comunicate stuffs to the PBS shader
+    Ogre::uint32 getPassBufferSize( const Ogre::CompositorShadowNode *shadowNode, bool casterPass,
+                                    bool dualParaboloid, Ogre::SceneManager *sceneManager ) const;
 
-        float* preparePassBuffer( const Ogre::CompositorShadowNode *shadowNode, bool casterPass,
-                                  bool dualParaboloid, Ogre::SceneManager *sceneManager,
-                                  float *passBufferPtr );
-    };
+    float* preparePassBuffer( const Ogre::CompositorShadowNode *shadowNode, bool casterPass,
+                              bool dualParaboloid, Ogre::SceneManager *sceneManager,
+                              float *passBufferPtr );
+  };
 
 }
 
