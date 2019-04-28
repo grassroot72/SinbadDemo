@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2000-2013 Torus Knot Software Ltd
+Copyright (c) 2000-2013 Torus Knot Software Ltd 
 Copyright (c) 2019 Edward LEI
 
 
